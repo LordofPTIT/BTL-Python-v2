@@ -1,0 +1,23 @@
+{
+       "name": "Anti-Phishing Extension",
+       "version": "1.0.0",
+       "description": "Protects against phishing websites",
+       "manifest_version": 2,
+       "permissions": ["storage", "tabs", "webRequest", "webRequestBlocking", "<all_urls>"],
+       "background": {
+         "scripts": ["js/background.js"],
+         "persistent": true
+       },
+       "content_scripts": [
+         {
+           "matches": ["<all_urls>"],
+           "js": ["js/features.js"]
+         }
+       ],
+       "web_accessible_resources": ["js/blocking.js", "blocking.html"],
+       "icons": {
+         "16": "assets/icon16.png",
+         "48": "assets/icon48.png",
+         "128": "assets/icon128.png"
+       }
+     }
